@@ -3,6 +3,9 @@ function [q, dq, d2q, dqM, tau, pwm, curr, time] = readStateExt(n, filename)
 % n is the number of joints in the limb (6 for a leg, 7? for the arm, ...)
 
 format = '%d %f ';
+
+filename = strrep(filename,':','_');
+
 fid    = fopen(filename);
 
 for j = 1 : 11
@@ -15,7 +18,7 @@ for j = 1 : 11
       end
    end
    if ismember(j,[1 2 3 5 7 8])
-       format = [format, ') [ok] '];
+       format = [format, ') %*s '];
    else
        format = [format, ') %*s '];
    end

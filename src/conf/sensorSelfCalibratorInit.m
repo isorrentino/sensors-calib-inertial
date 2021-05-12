@@ -3,10 +3,10 @@
 %====================================================================
 
 %% Common model and calibration input parameters
-modelName = 'iCubGenova04'; % as the models defined in 'icub-models' repo
+modelName = 'iCubGazeboV3'; % as the models defined in 'icub-models' repo
 dataPath  = '../../data/dumper';
-%modelPath = '../models/icubSim/icub.urdf';
-modelPath = '../models/iCubGenova04/model.urdf';
+modelPath = '../models/iCubGazeboV3/model.urdf';
+% modelPath = '../models/iCubGenova04/model.urdf';
 %calibrationMapFile = '../../data/calibration/calibrationMap_#6.mat';
 calibrationMapFile = 'calibrationMap.mat';
 %calibrationMapFile = '';
@@ -118,7 +118,7 @@ clear acquiredParts mtbSensorAct savePlot exportPlot loadJointPos ...
 
 % Calibrated parts:
 % Only the accelerometers from these parts (limbs) will be calibrated
-calibedParts = {'torso','head'};
+calibedParts = {'torso'};
 
 % some sensors are de-activated because of faulty behaviour, bad calibration 
 % or wrong frame definition
@@ -231,7 +231,7 @@ clear calibedParts calibedJointsIdxes mtbSensorAct savePlot exportPlot loadJoint
 
 % Calibrated parts:
 % Only the joint parameters from these parts (limbs) will be calibrated
-calibedParts = {'right_leg'};
+calibedParts = {'left_arm'};
 
 % Fine selection of joints to calibrate:
 % Select the joints to calibrate through the respective indexes. These indexes match 
@@ -254,10 +254,10 @@ calibedParts = {'right_leg'};
 % !!! Below joint indexes will be ignored for parts not defined in
 % 'calibedParts' !!!
 %=================================================================
-calibedJointsIdxes.left_arm = 0:3;
-calibedJointsIdxes.right_arm = 0:3;
+calibedJointsIdxes.left_arm = 0;
+calibedJointsIdxes.right_arm = 0;
 calibedJointsIdxes.left_leg = 0:5;
-calibedJointsIdxes.right_leg = 0:5;
+calibedJointsIdxes.right_leg = 0;
 calibedJointsIdxes.torso = 0:2;
 calibedJointsIdxes.head = 0:2;
 

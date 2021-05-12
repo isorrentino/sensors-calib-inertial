@@ -20,7 +20,8 @@ calibrationMap = model.calibrationMap;
 Init.unWrap(taskSpecificParams);
 
 % Get the coupling info from the motor name. Each motor belongs to a single coupling set
-jointMotorCoupling = cell(model.jointsDbase.getJMcouplings('motors',{motorName})){1};
+jointMotorCouplingtmp = cell(model.jointsDbase.getJMcouplings('motors',{motorName}));
+jointMotorCoupling = jointMotorCouplingtmp{1};
 
 %% build input data for calibration
 %

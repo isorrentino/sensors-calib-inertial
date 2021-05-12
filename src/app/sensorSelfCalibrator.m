@@ -28,13 +28,14 @@ init = Init.load('sensorSelfCalibratorInit');
 model = RobotModel(init.modelName,init.modelPath,init.calibrationMapFile);
 
 % Load last acquired data accessors from file
+
 if exist('lastAcqSensorDataAccessorMap.mat','file') == 2
     load('lastAcqSensorDataAccessorMap.mat','lastAcqSensorDataAccessorMap');
 end
 if ~exist('lastAcqSensorDataAccessorMap','var')
     lastAcqSensorDataAccessorMap = containers.Map('KeyType','char','ValueType','any');
 end
-
+ 
 % All below procedures are optional and checked/unchecked in the main
 % interface parameters
 

@@ -61,7 +61,7 @@ classdef LowlevTauCtrlCalibrator < Calibrator
         timeStop = 0;
         subSamplingSize = 0;
         filtParams@struct;
-        savePlotCallback = @() [];
+        
         
         % Main state of the state machine:
         % - 'state.current' gives the current state indexing the 'stateArray'
@@ -80,40 +80,30 @@ classdef LowlevTauCtrlCalibrator < Calibrator
         isDebugMode = false;
     end
     
+    properties(Access=public)
+      savePlotCallback = @() [];
+    end
+    
     methods(Access=protected)
         function obj = LowlevTauCtrlCalibrator()
         end
         
+        calibrateSensors(obj,...
+            dataPath,~,measedSensorList,measedPartsList,...
+            model,taskSpecificParams);
+          
         % state machine methods
-        transition = promptUser(obj);
         
-        transition = nextGroupTrans(obj);
         
-        start(obj);
+        
         
         acquire(obj,frictionOrKtau);
         
         fit(obj,frictionOrKtau);
         
-        function acqFriction(obj), obj.acquire('friction'); end
-        
-        function acqKtau(obj), obj.acquire('ktau'); end
-        
-        function fitFriction(obj), obj.fit('friction'); end
-        
-        function fitKtau(obj), obj.fit('ktau'); end
-        
-        function discardAcqFriction(obj), []; end
-        
-        function discardAcqKtau(obj), []; end
-        
         plotTrainingData(obj,path,sensors,parts,model,taskSpec);
         
         plotModel(obj,frictionOrKtau,model,xVar,nbSamples);
-        
-        calibrateSensors(obj,...
-            dataPath,~,measedSensorList,measedPartsList,...
-            model,taskSpecificParams);
     end
     
     methods(Static=true, Access=public)
@@ -126,6 +116,24 @@ classdef LowlevTauCtrlCalibrator < Calibrator
     
     methods(Access=public)
         run(obj,init,model,lastAcqSensorDataAccessorMap);
+        
+        start(obj);
+        
+        function acqFriction(obj), obj.acquire('friction'); end
+        
+        function acqKtau(obj), obj.acquire('ktau'); end
+        
+        function fitFriction(obj), obj.fit('friction'); end
+        
+        function fitKtau(obj), obj.fit('ktau'); end
+        
+        function discardAcqFriction(obj), []; end
+        
+        function discardAcqKtau(obj), []; end    
+        
+        transition = promptUser(obj);
+        
+        transition = nextGroupTrans(obj);
     end
     
     methods(Static=true, Access=protected)

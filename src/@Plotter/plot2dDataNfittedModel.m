@@ -31,9 +31,9 @@ xlabel(xLabel,'Fontsize',12);
 ylabel(yLabel,'Fontsize',12);
 
 if ~isempty(xModel)
-    legend('Location','BestOutside',dataLegend,modelLegend);
+    legend({dataLegend,modelLegend},'Location','BestOutside');
 else
-    legend('Location','BestOutside',dataLegend);
+    legend({dataLegend},'Location','BestOutside');
 end
 
 set(gca,'FontSize',12);

@@ -7,6 +7,8 @@
 mappingIn = {...
     'modelName'      'yarpRobotName'  'yarpPortPrefix'
     'iCubGenova02'   'iCubGenova02'   'icub'          
-    'iCubGenova04'   'iCubGenova04'   'icub'          
+    'iCubGenova04'   'iCubGenova04'   'icub' 
+    'iCubGenova09'   'iCubGenova09'   'icub' 
     'iCubGazeboV2_5' 'iCubGazeboV2_5' 'icubSim'
+    'iCubGazeboV3'   'iCubGazeboV3'   'icubSim'
     'icubGazeboSim'  'icubGazeboSim'  'icubSim'};
