@@ -212,6 +212,10 @@ function getOrAcquireData(...
 % unwrap the parameters specific to joint encoders calibration
 Init.unWrap(taskInitParamsMap(task));
 
+if ~exist('sensorDataAcq','var')
+   error('The variable does not exist');
+end
+
 switch sensorDataAcq{1}
     case 'new'
         % Acquire sensor measurements while moving the joints following

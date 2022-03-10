@@ -6,7 +6,7 @@
 robotName = 'icub'; % 'icub' or 'icubSim'
 dataPath  = '../../data/dumper';
 %modelPath = '../models/icubSim/icub.urdf';
-modelPath = '../models/iCubGenova04/model.urdf';
+modelPath = '../models/iCubGenova09/model.urdf';
 %calibrationMapFile = '../../data/calibration/calibrationMap_#6.mat';
 %calibrationMapFile = 'calibrationMap.mat';
 calibrationMapFile = ['../../data/calibration/' robotName '_calibrationMap.mat'];
@@ -18,16 +18,16 @@ calibrationType = 'standard';
 acquireSensorsTestData  = true;
 calibrateAccelerometers = false;
 calibrateJointEncoders  = false;
-calibrateFTsensors      = false;
+calibrateFTsensors      = true;
 calibrateGyroscopes     = false;
 
 %% Diagnosis and visualization
 runDiagnosis = false;
 
 %% Common output parameters
-saveCalibration = false;
-defaultSavePlot = false;
-defaultExportPlot = false;
+saveCalibration = true;
+defaultSavePlot = true;
+defaultExportPlot = true;
 
 
 %% Custom calibration sequence

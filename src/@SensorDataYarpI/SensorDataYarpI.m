@@ -248,7 +248,7 @@ classdef SensorDataYarpI < handle
                 if ~port.conn   % if port is not connected
                     % 'yarp connect <output port> <input port>
                     if ~yarp.Network.connect(port.from,port.to)
-                        error(['couldn''t connect port ' port.to '!']);
+                        error(['couldn''t connect port ' port.to ' to ' port.from '!']);
                     end
                     disp(['Added connection from port ' port.from ' to port ' port.to '.']);
                     % update 'conn' flag

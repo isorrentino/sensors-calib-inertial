@@ -19,7 +19,7 @@ imuSensors_folder_rule_dumper =  '[datapath ''/'' part ''/inertial'']';
 % FTSensors_folder_rule_dumper =             '[datapath ''/'' part ''/analog'']';
 
 % For the multisens ft port
-FTSensors_port_rule_icub   =        '[''/'' robotname ''/'' part ''/measures:o'']';
-FTSensors_port_rule_dumper = '[''/dumper/'' robotname ''/'' part ''/measures'']';
-FTSensors_folder_rule_dumper =             '[datapath ''/'' part ''/measures'']';
+FTSensors_port_rule_icub   =        '[''/'' robotname ''/'' part ''/analog:o'']';
+FTSensors_port_rule_dumper = '[''/dumper/'' robotname ''/'' part ''/analog'']';
+FTSensors_folder_rule_dumper =             '[datapath ''/'' part ''/analog'']';
 
