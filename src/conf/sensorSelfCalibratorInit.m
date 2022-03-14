@@ -18,16 +18,16 @@ calibrationType = 'standard';
 acquireSensorsTestData  = true;
 calibrateAccelerometers = false;
 calibrateJointEncoders  = false;
-calibrateFTsensors      = true;
+calibrateFTsensors      = false;
 calibrateGyroscopes     = false;
 
 %% Diagnosis and visualization
 runDiagnosis = false;
 
 %% Common output parameters
-saveCalibration = true;
-defaultSavePlot = true;
-defaultExportPlot = true;
+saveCalibration = false;
+defaultSavePlot = false;
+defaultExportPlot = false;
 
 
 %% Custom calibration sequence
@@ -48,7 +48,8 @@ defaultExportPlot = true;
 %% 'acquireSensorsTestData': Acquire only sensors test data (only accelerometers for now)
 
 % define the robot limb holding the sensors on which we run the diagnosis.
-acquiredParts = {'left_leg','right_leg'};%'left_arm', ,'right_arm'
+% acquiredParts = {'left_leg','right_leg','left_arm','right_arm'};%'left_arm', ,'right_arm'
+acquiredParts = {'left_arm','right_arm'};
 %acquiredParts = {'right_leg'};%'left_arm', ,'right_arm'
 % Profile = ... TBD!!
 
