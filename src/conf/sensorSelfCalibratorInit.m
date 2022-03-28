@@ -3,7 +3,8 @@
 %====================================================================
 
 %% Common model and calibration input parameters
-robotName = 'icub'; % 'icub' or 'icubSim'
+robotName = 'icubSim'; % 'icub' or 'icubSim'
+partToRun = 'legs'; % 'arms'
 dataPath  = '../../data/dumper';
 %modelPath = '../models/icubSim/icub.urdf';
 modelPath = '../models/iCubGenova09/model.urdf';
@@ -49,7 +50,12 @@ defaultExportPlot = false;
 
 % define the robot limb holding the sensors on which we run the diagnosis.
 % acquiredParts = {'left_leg','right_leg','left_arm','right_arm'};%'left_arm', ,'right_arm'
-acquiredParts = {'left_arm','right_arm'};
+if strcmp(partToRun,'arms')
+    acquiredParts = {'left_arm','right_arm'};
+end
+if strcmp(partToRun,'legs')
+   acquiredParts = {'left_leg','right_leg'};
+end
 %acquiredParts = {'right_leg'};%'left_arm', ,'right_arm'
 % Profile = ... TBD!!
 
