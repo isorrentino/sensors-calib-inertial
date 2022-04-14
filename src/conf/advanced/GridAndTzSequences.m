@@ -254,7 +254,7 @@ seqHomeParams{2} = homeCalibLimbs;
 % seqHomeParams{4} = homeCalibLimbs;
 seqEndParams     = homeCalibLimbs;
 
-if strcmp(partToRun,'legs')
+if strcmp(partToRun,'arms')
     % Map parts to sequences and params
     selector.calibedParts = {...
         'left_arm','right_arm',...
