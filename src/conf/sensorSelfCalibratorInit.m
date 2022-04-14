@@ -4,10 +4,10 @@
 
 %% Common model and calibration input parameters
 robotName = 'icubSim'; % 'icub' or 'icubSim'
-partToRun = 'legs'; % 'arms'
+partToRun = 'arms'; % 'arms'
 dataPath  = '../../data/dumper';
 %modelPath = '../models/icubSim/icub.urdf';
-modelPath = '../models/iCubGenova09/model.urdf';
+modelPath = '';
 %calibrationMapFile = '../../data/calibration/calibrationMap_#6.mat';
 %calibrationMapFile = 'calibrationMap.mat';
 calibrationMapFile = ['../../data/calibration/' robotName '_calibrationMap.mat'];
